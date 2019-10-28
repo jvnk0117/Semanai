@@ -9,7 +9,10 @@ import frecuencias
 USER = getpass.getuser()
 #Calls the coding function on the "encoder.py" file
 def coder():
-    encoder.main()
+    encryptedMessage = input("Enter the encoded message: ")
+    switchIndex = int(input("Enter the switch index: "))
+    output = encoder.encode(encryptedMessage, switchIndex)
+    return output
 
 #Calls the decoding function on te "decoder.py file
 def deCoder():
@@ -29,7 +32,7 @@ def main():
     print("---------------------------------------------------")
     while(inputMenu != -1):
         if inputMenu == 1:
-            coder()
+            print(coder())
         elif inputMenu == 2:
             deCoder()
         elif(inputMenu == -1):

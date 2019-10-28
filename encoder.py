@@ -1,9 +1,5 @@
 import frecuencias as f
 
-text = "Muller se la come"
-swap = 4
-print("texto: "+ text)
-
 #print("swap: "+ s)
 
 
@@ -21,7 +17,5 @@ def encode(text, s):
             crypt += chr((ord(char) + s - 97) % 26 + 97)
 
     return crypt.lower()
-
-print(encode(text, swap))
 
 
