@@ -1,4 +1,4 @@
-import matplot
+import matplotlib as mp
 
 def obtenerTexto(archivo):
     entrada = open(archivo, 'r')
@@ -67,3 +67,4 @@ def frecuencias():
     texto1_letras = frecuenciaLetras(texto1)
     texto2_letras = frecuenciaLetras(texto2)
     texto3_letras = frecuenciaLetras(texto3)
+    return texto1
