@@ -37,9 +37,12 @@ def depurarLetras(texto):
                         letras.remove('“')
                     if '”' in letras:
                         letras.remove('”')
+                    if '%' in letras:
+                        letras.remove('%')
                     for k in letras:
                         h = k.lower()
                         letrasDepuradas.append(h)
+
     return letrasDepuradas
 
 
