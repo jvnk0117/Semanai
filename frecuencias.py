@@ -1,7 +1,7 @@
 import matplot
 
 def obtenerTexto(archivo):
-    entrada = open(archivo, 'r')
+    entrada = open(archivo,'r')
     lineas = entrada.readlines()
     lineas2 = []
     for linea in lineas:
@@ -59,7 +59,6 @@ def frecuenciaLetras(texto):
 
 
 
-frecuenciaLetras(obtenerTexto('Text2.txt'))
 def frecuencias():
     texto1 = obtenerTexto('Text1.txt')
     texto2 = obtenerTexto('Text2.txt')
@@ -67,3 +66,11 @@ def frecuencias():
     texto1_letras = frecuenciaLetras(texto1)
     texto2_letras = frecuenciaLetras(texto2)
     texto3_letras = frecuenciaLetras(texto3)
+
+    print(texto1)
+
+
+def graph():
+    frecuencias()
+
+graph()
