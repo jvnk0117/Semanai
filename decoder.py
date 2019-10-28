@@ -1,4 +1,5 @@
 import identificarIndice
+import encoder
 
 def decoder(toDecode,sampleText):
     textIdiom = open(sampleText,"r") #abrir txt de idioma.
@@ -8,11 +9,8 @@ def decoder(toDecode,sampleText):
 
     deltaIndex = indexIdiom - indexToDecod
 
-
+    decoded = encoder(toDecode,-deltaIndex)
 
     textIdiom.close()
 
-
-
-
-    return ("issues")
+    return (decoded)
