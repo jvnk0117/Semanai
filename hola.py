@@ -1,1 +1,0 @@
-print("Ya llego su papa hijos de su pinche madre")
