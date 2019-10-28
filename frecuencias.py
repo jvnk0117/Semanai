@@ -1,3 +1,5 @@
+import matplot
+
 def obtenerTexto(archivo):
     entrada = open(archivo, 'r')
     lineas = entrada.readlines()
@@ -36,13 +38,20 @@ def depurarLetras(texto):
                     if '”' in letras:
                         letras.remove('”')
                     for k in letras:
-                        letrasDepuradas.append(k)
+                        h = k.lower()
+                        letrasDepuradas.append(h)
     return letrasDepuradas
 
 
 def frecuenciaLetras(texto):
     frequence = {}
     listaLetras = depurarLetras(texto)
+    for letra in listaLetras:
+        n = listaLetras.count(letra)
+        frequence[letra]=n
+    return frequence
+
+
 
 
 
