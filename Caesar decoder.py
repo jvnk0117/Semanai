@@ -1,6 +1,8 @@
 #encoding: UTF-8
 
 import getpass
+import encoder
+import decoder
 USER = getpass.getuser()
 
 def encoder():
