@@ -52,6 +52,7 @@ def frecuenciaLetras(texto):
     for letra in listaLetras:
         n = listaLetras.count(letra)
         frequence[letra]=n
+    print(frequence)
     return frequence
 
 
@@ -67,7 +68,6 @@ def frecuencias():
     texto2_letras = frecuenciaLetras(texto2)
     texto3_letras = frecuenciaLetras(texto3)
 
-    print(texto1)
 
 
 def graph():
