@@ -15,6 +15,8 @@ def encode(text, s):
 
         if (char.isupper()):
             crypt += chr((ord(char) + s - 65) % 26 + 65)
+        elif(char == " "):
+            crypt += " "
         else:
             crypt += chr((ord(char) + s - 97) % 26 + 97)
 
