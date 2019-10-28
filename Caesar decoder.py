@@ -1,16 +1,19 @@
 #encoding: UTF-8
 
 import getpass
+#Import the python files needed for each function in the menu
 import encoder
 import decoder
+import frecuencias
+
 USER = getpass.getuser()
+#Calls the coding function on the "encoder.py" file
+def coder():
+    encoder.main()
 
-def encoder():
-    pass
-
-
-def decoder():
-    pass
+#Calls the decoding function on te "decoder.py file
+def deCoder():
+    decoder.main()
 
 
 def main():
@@ -26,9 +29,9 @@ def main():
     print("---------------------------------------------------")
     while(inputMenu != -1):
         if inputMenu == 1:
-            encoder()
+            coder()
         elif inputMenu == 2:
-            decoder()
+            deCoder()
         elif(inputMenu == -1):
             break
         else:

@@ -15,6 +15,7 @@ def obtenerTexto(archivo):
 
 def depurarLetras(texto):
     letrasDepuradas = []
+    diccLetras = {'á':'a', 'é':"e", 'í':'i', 'ó':'o', 'ú':'u'}
     for frase in texto:
         palabras = frase.split(' ')
         for palabra in palabras:
@@ -39,6 +40,20 @@ def depurarLetras(texto):
                         letras.remove('”')
                     if '%' in letras:
                         letras.remove('%')
+                    if '/' in letras:
+                        letras.remove('/')
+                    if '…' in letras:
+                        letras.remove('…')
+                    if 'á' in letras:
+                        letras.remove('á')
+                    if 'é' in letras:
+                        letras.remove('é')
+                    if 'í' in letras:
+                        letras.remove('í')
+                    if 'ó' in letras:
+                        letras.remove('ó')
+                    if 'ú' in letras:
+                        letras.remove('ú')
                     for k in letras:
                         h = k.lower()
                         letrasDepuradas.append(h)
@@ -55,10 +70,6 @@ def frecuenciaLetras(texto):
     return frequence
 
 
-
-
-
-frecuenciaLetras(obtenerTexto('Text2.txt'))
 def frecuencias():
     texto1 = obtenerTexto('Text1.txt')
     texto2 = obtenerTexto('Text2.txt')
