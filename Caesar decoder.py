@@ -9,7 +9,7 @@ def encoder():
     pass
 
 
-def coder():
+def decoder():
     pass
 
 
@@ -28,7 +28,7 @@ def main():
         if inputMenu == 1:
             encoder()
         elif inputMenu == 2:
-            coder()
+            decoder()
         elif(inputMenu == -1):
             break
         else:

@@ -58,7 +58,6 @@ def frecuenciaLetras(texto):
 
 
 
-
 frecuenciaLetras(obtenerTexto('Text2.txt'))
 def frecuencias():
     texto1 = obtenerTexto('Text1.txt')
