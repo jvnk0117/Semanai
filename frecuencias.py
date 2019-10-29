@@ -103,7 +103,7 @@ def frecuencias():
     textoGeneral2 = {}
 
     tt = 0
-    for i in range (len(abecedario)):
+    for i in range(len(abecedario)):
         #print(abecedario[i])
         ooo = abecedario[i]
 
