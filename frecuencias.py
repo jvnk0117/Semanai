@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def obtenerTexto(archivo):
-    entrada = open(archivo, 'r')
+    entrada = open(archivo, 'r', encoding="utf8")
     lineas = entrada.readlines()
     lineas2 = []
 
@@ -103,7 +103,7 @@ def frecuencias():
     textoGeneral2 = {}
 
     tt = 0
-    for i in range (len(abecedario)):
+    for i in range(len(abecedario)):
         #print(abecedario[i])
         ooo = abecedario[i]
 
