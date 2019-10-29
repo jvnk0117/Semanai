@@ -120,13 +120,87 @@ def frecuencias():
     print("PORCENTAJE")
     print(textoGeneral2)
     #print(textoGeneral)
-
-
     names = list(textoGeneral2.keys())
     values = list(textoGeneral2.values())
     plt.bar(range(len(abecedario)), values, tick_label = names)
     plt.show()
     plt.show()
+    return textoGeneral2
+
+def frecuenciaTexto(textoAnalizar):
+    print("TEXTO A ANALIZAR")
+    print(textoAnalizar)
+
+    textoGeneral = {}
+
+
+    abecedario = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j", "k", "l", "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    textoGeneral2 = {}
+    lineas = textoAnalizar
+    temporalList = []
+    for linea in lineas:
+        x = linea.split('\n')
+        #        print(x[0])
+        p = str(unicodedata.normalize('NFKD', x[0]).encode('ascii', 'ignore'))
+        # print(p[0])
+        # print(p)
+        o = list(p)
+        o.remove(o[0])
+        o.remove(o[0])
+        temporalList = temporalList + o
+
+        if ' ' in temporalList:
+            temporalList.remove(' ')
+
+    for i in range(len(temporalList)):
+        uuu = temporalList[i]
+        uuu = str.lower(uuu)
+        # print(uuu)
+        temporalList[i] = uuu
+    #print(temporalList)
+
+    oooDepurada = depurarLetras(temporalList)
+    #print(oooDepurada)
+    #print(type(oooDepurada))
+    tt = 0
+    texto1 = frecuenciaLetras(oooDepurada)
+
+    for i in range(len(abecedario)):
+        # print(abecedario[i])
+        ooo = abecedario[i]
+        t1 = texto1.get(ooo)
+
+        if (t1 == None):
+            t1 = 0
+        tt = tt + t1
+        # print(tt)
+    for i in range(len(abecedario)):
+        # print(abecedario[i])
+        ooo = abecedario[i]
+
+        t1 = texto1.get(ooo)
+        if (t1 == None):
+            t1 = 0
+
+
+        #print(t1)
+        #print(tt)
+        # print(t2)
+        # print(t3)
+        textoGeneral[abecedario[i]] = t1
+        textoGeneral2[abecedario[i]] = 100 * (t1) / tt
+    #print(textoGeneral)
+    print("PORCENTAJE")
+    print(textoGeneral2)
+    # print(textoGeneral)
+
+    ######GRAFICAR
+    names = list(textoGeneral2.keys())
+    values = list(textoGeneral2.values())
+    plt.bar(range(len(abecedario)), values, tick_label=names)
+    plt.show()
+    plt.show()
+    #######GRAFICAR
 
 
     return textoGeneral2
@@ -134,6 +208,7 @@ def frecuencias():
 
 def test():
     frecuencias()
-    frecuenciaLetras("PEPE PECAS PICA PAPAS")
+    frecuenciaTexto("PEPE PECAS PICA PAPAS")
+
 
 test()
