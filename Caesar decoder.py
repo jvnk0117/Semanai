@@ -37,8 +37,6 @@ def main():
             mensaje = input("Message to decode: ")
             file = input('Sample .txt file (example: "Text1.txt") ')
             deCoder(mensaje, file)
-        elif(inputMenu == -1):
-            break
         else:
             print("ERROR!!!! Please enter a valid value.")
             print("---------------------------------------------------")
@@ -49,10 +47,11 @@ def main():
                           "-1. Exit.\n"
                           "Your option: "))
         print("---------------------------------------------------")
-    else:
-        print("see you soon", USER)
-        print("Exiting the program...")
-        print("---------------------------------------------------")
+
+
+    print("see you soon", USER)
+    print("Exiting the program...")
+    print("---------------------------------------------------")
 
 
 main()
