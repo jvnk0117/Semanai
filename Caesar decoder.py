@@ -16,7 +16,21 @@ def coder():
 
 #Calls the decoding function on te "decoder.py file
 def deCoder():
-    decoder.main()
+    codedMessage = input("Enter the coded message: ")
+    textInput = input("Enter the text file name (with the .txt extension): ")
+    decoder.decoder(codedMessage, textInput)
+
+
+def bruteForce():
+    textInput = input("Enter the coded message\n"
+                      "WARNING! This may take a while to finish\n"
+                      "Message: ")
+    for i in range(1, 27):
+        output = encoder.encode(textInput, i)
+        if(output == textInput):
+            print("ATTEMPT %i: %s (INITIAL VALUE)3" % (i, output))
+        else:
+            print("ATTEMPT %i: %s " %(i, output))
 
 
 def main():
@@ -24,17 +38,20 @@ def main():
     print("Welcome %s" %USER)
     print("---------------------------------------------------")
     inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
-                      "Please enter the desired interaction on the menu:\n"
-                      "1. Encoder.\n"
-                      "2. Decoder.\n"
-                      "-1. Exit.\n"
-                      "Your option: "))
+                          "Please enter the desired interaction on the menu:\n"
+                          "1. Encoder.\n"
+                          "2. Decoder.\n"
+                          "3. BRUTE FORCE DECODING\n"
+                          "-1. Exit.\n"
+                          "Your option: "))
     print("---------------------------------------------------")
     while(inputMenu != -1):
         if inputMenu == 1:
             print(coder())
         elif inputMenu == 2:
             deCoder()
+        elif inputMenu == 3:
+            bruteForce()
         elif(inputMenu == -1):
             break
         else:
@@ -44,6 +61,7 @@ def main():
                           "Please enter the desired interaction on the menu:\n"
                           "1. Encoder.\n"
                           "2. Decoder.\n"
+                          "3. BRUTE FORCE DECODING\n"
                           "-1. Exit.\n"
                           "Your option: "))
         print("---------------------------------------------------")
