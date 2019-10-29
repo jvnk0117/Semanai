@@ -211,3 +211,5 @@ def test():
     frecuenciaTexto("PEPE PECAS PICA PAPAS")
 
 
+if __name__ == '__main__':
+    test()
