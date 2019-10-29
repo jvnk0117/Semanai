@@ -83,11 +83,11 @@ def frecuencias():
     tt = 0
     for i in range(len(abecedario)):
         #print(abecedario[i])
-        ooo = abecedario[i]
+        x = abecedario[i]
 
-        t1 = texto1_letras.get(ooo)
-        t2 = texto2_letras.get(ooo)
-        t3 = texto3_letras.get(ooo)
+        t1 = texto1_letras.get(x)
+        t2 = texto2_letras.get(x)
+        t3 = texto3_letras.get(x)
         if (t1 == None):
             t1 = 0;
         if (t2 == None):
@@ -98,11 +98,11 @@ def frecuencias():
         #print(tt)
     for i in range (len(abecedario)):
         #print(abecedario[i])
-        ooo = abecedario[i]
+        x = abecedario[i]
 
-        t1 = texto1_letras.get(ooo)
-        t2 = texto2_letras.get(ooo)
-        t3 = texto3_letras.get(ooo)
+        t1 = texto1_letras.get(x)
+        t2 = texto2_letras.get(x)
+        t3 = texto3_letras.get(x)
 
         if (t1 == None):
             t1 = 0;
@@ -211,4 +211,3 @@ def test():
     frecuenciaTexto("PEPE PECAS PICA PAPAS")
 
 
-test()

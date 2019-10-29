@@ -1,17 +1,15 @@
 import identificarIndice
 import encoder
+import frecuencias
 
-def decoder(toDecode,sampleText):
-    textIdiom = open(sampleText,"r") #abrir txt de idioma.
+def decoder(toDecode):
     # sacar indices mas altos.
-    indexToDecod = identificarIndice.identificarIndice(toDecode)
-    indexIdiom = identificarIndice.identificarIndice(textIdiom)
+    indexToDecod = frecuencias.frecuenciaLetras(toDecode)
+    indexIdiom = frecuencias.frecuencias()
 
     deltaIndex = indexIdiom - indexToDecod
 
     decoded = encoder.encode(toDecode,-deltaIndex)
-
-    textIdiom.close()
 
     return (decoded)
 

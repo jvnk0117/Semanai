@@ -1,6 +1,6 @@
 import frecuencias
 def identificarIndice(toDecode):
-    dicToDecode = frecuencias.frecuenciaLetras(toDecode)  # Se llama al metodo para obtener el diccionario con las letras  mas utilizadas en la frase.
+    dicToDecode = frecuencias.frecuenciasLetras(toDecode)  # Se llama al metodo para obtener el diccionario con las letras  mas utilizadas en la frase.
     indiceMayorToDecode = 0
     letraToDecode = ""
     # Se calcula el mayor indice
