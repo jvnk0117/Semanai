@@ -43,28 +43,6 @@ def depurarLetras(texto):
                     letras_list.remove('')
                 for j in letras_list:
                     letras = list(j)
-                    if '.' in letras:
-                        letras.remove('.')
-                    if ',' in letras:
-                        letras.remove(',')
-                    if '(' in letras:
-                        letras.remove('(')
-                    if ')' in letras:
-                        letras.remove(')')
-                    if '“' in letras:
-                        letras.remove('“')
-                    if '”' in letras:
-                        letras.remove('”')
-                    if '%' in letras:
-                        letras.remove('%')
-                    if ';' in letras:
-                        letras.remove(';')
-                    if '/' in letras:
-                        letras.remove('/')
-                    if '?' in letras:
-                        letras.remove('?')
-                    if '?' in letras:
-                        letras.remove('?')
 
                     for k in letras:
                         h = k.lower()
@@ -142,15 +120,20 @@ def frecuencias():
     print("PORCENTAJE")
     print(textoGeneral2)
     #print(textoGeneral)
+
+
     names = list(textoGeneral2.keys())
     values = list(textoGeneral2.values())
     plt.bar(range(len(abecedario)), values, tick_label = names)
     plt.show()
     plt.show()
+
+
     return textoGeneral2
 
 
 def test():
     frecuencias()
+    frecuenciaLetras("PEPE PECAS PICA PAPAS")
 
 test()
