@@ -15,8 +15,8 @@ def coder():
     return output
 
 #Calls the decoding function on te "decoder.py file
-def deCoder():
-    decoder.main()
+def deCoder(message, file):
+    decoder.decoder(message, file)
 
 
 def main():
@@ -34,7 +34,9 @@ def main():
         if inputMenu == 1:
             print(coder())
         elif inputMenu == 2:
-            deCoder()
+            mensaje = input("Message to decode: ")
+            file = input('Sample .txt file (example: "Text1.txt") ')
+            deCoder(mensaje, file)
         elif(inputMenu == -1):
             break
         else:
@@ -48,6 +50,7 @@ def main():
                           "Your option: "))
         print("---------------------------------------------------")
     else:
+        print("see you soon", USER)
         print("Exiting the program...")
         print("---------------------------------------------------")
 

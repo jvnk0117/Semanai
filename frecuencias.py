@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 import unicodedata
 import matplotlib.pyplot as plt
 import numpy as np
@@ -138,9 +140,7 @@ def frecuencias():
         #print(t3)
         textoGeneral[abecedario[i]] = t1 + t2 + t3
         textoGeneral2[abecedario[i]] = 100 * (t1 + t2 + t3)/tt
-    print(textoGeneral)
-    print("PORCENTAJE")
-    print(textoGeneral2)
+
     #print(textoGeneral)
     names = list(textoGeneral2.keys())
     values = list(textoGeneral2.values())
@@ -153,4 +153,3 @@ def frecuencias():
 def test():
     frecuencias()
 
-test()

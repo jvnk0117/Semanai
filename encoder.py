@@ -1,6 +1,3 @@
-text = "ser o no ser"
-swap = 4
-
 
 def encode(text, s):
     #Inicializa el valor string
@@ -28,4 +25,4 @@ def main():
     print("texto: "+text)
     print("Decode: ")
     print(encode(text,swap))
-main()
+
