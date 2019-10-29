@@ -30,7 +30,6 @@ def obtenerTexto(archivo):
     #print(temporalList)
     return temporalList
 
-
 def depurarLetras(texto):
     letrasDepuradas = []
     for frase in texto:
@@ -43,28 +42,6 @@ def depurarLetras(texto):
                     letras_list.remove('')
                 for j in letras_list:
                     letras = list(j)
-                    if '.' in letras:
-                        letras.remove('.')
-                    if ',' in letras:
-                        letras.remove(',')
-                    if '(' in letras:
-                        letras.remove('(')
-                    if ')' in letras:
-                        letras.remove(')')
-                    if '“' in letras:
-                        letras.remove('“')
-                    if '”' in letras:
-                        letras.remove('”')
-                    if '%' in letras:
-                        letras.remove('%')
-                    if ';' in letras:
-                        letras.remove(';')
-                    if '/' in letras:
-                        letras.remove('/')
-                    if '?' in letras:
-                        letras.remove('?')
-                    if '?' in letras:
-                        letras.remove('?')
 
                     for k in letras:
                         h = k.lower()
@@ -74,20 +51,14 @@ def depurarLetras(texto):
     #print(letrasDepuradas)
     return letrasDepuradas
 
-
 def frecuenciaLetras(texto):
     frequence = {}
     listaLetras = depurarLetras(texto)
     for letra in listaLetras:
         n = listaLetras.count(letra)
         frequence[letra]=n
-    #print(frequence)
+    print(frequence)
     return frequence
-
-
-
-
-
 
 def frecuencias():
     textoGeneral = {}
@@ -155,7 +126,6 @@ def frecuenciaTexto(textoAnalizar):
 
     textoGeneral = {}
 
-
     abecedario = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j", "k", "l", "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     textoGeneral2 = {}
     lineas = textoAnalizar
@@ -203,7 +173,6 @@ def frecuenciaTexto(textoAnalizar):
         t1 = texto1.get(ooo)
         if (t1 == None):
             t1 = 0
-
 
         #print(t1)
         #print(tt)
