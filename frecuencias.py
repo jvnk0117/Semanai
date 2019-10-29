@@ -34,7 +34,7 @@ def obtenerTexto(archivo):
 def depurarLetras(texto):
     letrasDepuradas = []
     for frase in texto:
-        palabras = frase.split(' ')
+        palabras = frase.strip(' ')
         for palabra in palabras:
             plabra_list = palabra.split()
             for n in plabra_list:
