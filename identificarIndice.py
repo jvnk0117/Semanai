@@ -15,8 +15,3 @@ def identificarIndice(toDecode):
     indice = ord(letraToDecode[0])
 
     return indice
-
-
-if __name__ == '__main__':
-    textToDecode = open("Text2.txt", 'r', encoding="utf8")
-    identificarIndice(textToDecode)
