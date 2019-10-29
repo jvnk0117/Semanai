@@ -1,6 +1,6 @@
 import frecuencias
 def identificarIndice(toDecode):
-    dicToDecode = frecuencias.frecuenciasLetras(toDecode)  # Se llama al metodo para obtener el diccionario con las letras  mas utilizadas en la frase.
+    dicToDecode = frecuencias.frecuenciaTexto(toDecode)  # Se llama al metodo para obtener el diccionario con las letras  mas utilizadas en la frase.
     indiceMayorToDecode = 0
     letraToDecode = ""
     # Se calcula el mayor indice
@@ -9,9 +9,14 @@ def identificarIndice(toDecode):
             indiceMayorToDecode = x
 
     # Se calcula la letra.
-    while letraToDecode == '':
-        letraToDecode = dicToDecode.get(indiceMayorToDecode)
+    letraToDecode = [key for key,indx in dicToDecode.items() if indx == indiceMayorToDecode]
+
     #Se calcula el char de la letra para comparar con el otro texto.
-    indice = ord(letraToDecode)
+    indice = ord(letraToDecode[0])
 
     return indice
+
+
+if __name__ == '__main__':
+    textToDecode = open("Text2.txt", 'r', encoding="utf8")
+    identificarIndice(textToDecode)

@@ -59,7 +59,7 @@ def frecuenciaLetras(texto):
     for letra in listaLetras:
         n = listaLetras.count(letra)
         frequence[letra]=n
-    print(frequence)
+    #print(frequence)
     return frequence
 
 
@@ -128,8 +128,8 @@ def frecuencias():
     return textoGeneral2
 
 def frecuenciaTexto(textoAnalizar):
-    print("TEXTO A ANALIZAR")
-    print(textoAnalizar)
+   # print("TEXTO A ANALIZAR")
+   # print(textoAnalizar)
 
     textoGeneral = {}
 
@@ -190,8 +190,8 @@ def frecuenciaTexto(textoAnalizar):
         textoGeneral[abecedario[i]] = t1
         textoGeneral2[abecedario[i]] = 100 * (t1) / tt
     #print(textoGeneral)
-    print("PORCENTAJE")
-    print(textoGeneral2)
+   # print("PORCENTAJE")
+   # print(textoGeneral2)
     # print(textoGeneral)
 
     ######GRAFICAR
