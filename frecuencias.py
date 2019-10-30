@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #comentario
+
+#LEE TEXTO
 def obtenerTexto(archivo):
     entrada = open(archivo, 'r', encoding="utf8")
     lineas = entrada.readlines()
@@ -25,7 +27,7 @@ def obtenerTexto(archivo):
         temporalList[i] = charToLowerCase
     return temporalList
 
-
+#####ELIINA ELEMENTOS QUE NO PERTENECEN AL ALFABETO
 def depurarLetras(texto):
     letrasDepuradas = []
     for frase in texto:
@@ -45,7 +47,7 @@ def depurarLetras(texto):
                             letrasDepuradas.append(h)
     return letrasDepuradas
 
-
+#####CUENTA CADA VEZ QUE APARECE UN ELEMENTO EN EL TEXTO, REGRESA DICCIONARIO DE FRECUENCIAS
 def frecuenciaLetras(texto):
     frequence = {}
     listaLetras = depurarLetras(texto)
@@ -58,7 +60,7 @@ def frecuenciaLetras(texto):
 
 
 
-
+##FRECUENCIAS DE 3 TEXTTOS DISTINTOS, GRAFICA
 def frecuencias():
     textoGeneral = {}
     
@@ -111,6 +113,8 @@ def frecuencias():
     plt.show()
     return textoGeneral2
 
+
+#FRECUANCIA STRING, GRAFICA
 def frecuenciaTexto(textoAnalizar):
    # print("TEXTO A ANALIZAR")
    # print(textoAnalizar)
