@@ -58,8 +58,6 @@ def frecuenciaLetras(texto):
 
 
 
-
-
 ##FRECUENCIAS DE 3 TEXTTOS DISTINTOS, GRAFICA
 def frecuencias():
     textoGeneral = {}
