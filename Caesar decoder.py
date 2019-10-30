@@ -39,7 +39,8 @@ def main():
     #While cycle: processes the value given in "inputMenu" and sends it to the according function
     while(inputMenu != 0):
         if inputMenu == 1:
-            print("Encoded message: "+coder())
+            encodedMessage = coder()
+            print("Encoded message: %s" % encodedMessage)
         elif inputMenu == 2:
             deCoder()
         else:

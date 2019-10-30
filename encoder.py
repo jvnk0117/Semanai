@@ -1,8 +1,5 @@
 
 def encode(text, s):
-    #leer un archivo como string
-
-    print(text)
     #Inicializa el valor string
     crypt = ""
     for i in range(len(text)):
