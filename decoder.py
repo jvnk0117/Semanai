@@ -3,22 +3,22 @@ import encoder
 
 
 
-def decoder():
-    toDecode = open("textoEncriptado.txt", 'r', encoding="utf8")
+def decoder(text):
+    #toDecode = open("textoEncriptado.txt", 'r', encoding="utf8")
     sampleText = open("Text2.txt", 'r', encoding="utf8")
-    toDecodeString = toDecode.read()
+    #toDecodeString = toDecode.read()
+    toDecode = text
 
     # sacar indices mas altos.
-    indexToDecod = identificarIndice.identificarIndice(toDecodeString)
+    indexToDecod = identificarIndice.identificarIndice(toDecode)
     indexIdiom = identificarIndice.identificarIndice(sampleText.read())
 
     deltaIndex = indexToDecod - indexIdiom
-    print(deltaIndex)
 
-    decoded = encoder.encode(toDecodeString,-deltaIndex)
-    toDecode.close()
+    decoded = encoder.encode(toDecode,-deltaIndex)
+    #toDecode.close()
     sampleText.close()
-    return (decoded)
+    return ("Message Received: %s\nSwap Key: %i\nDecoded Message: %s" %(toDecode, deltaIndex, decoded))
 
 
 

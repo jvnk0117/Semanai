@@ -12,6 +12,10 @@ def encode(text, s):
 
             #Evita que lea el valor unicode de un espacio y lo pon
             crypt += " "
+        elif(char == ","):
+            crypt += ","
+        elif (char == "."):
+            crypt += "."
         else:
             crypt += chr((ord(char) + s - 97) % 26 + 97)
 

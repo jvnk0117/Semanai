@@ -16,7 +16,9 @@ def coder():
 
 #Calls the decoding function on te "decoder.py file
 def deCoder():
-    decoder.decoder()
+    textInput = input("Enter the coded text: ")
+    output = decoder.decoder(textInput)
+    return output
 
 
 def main():
@@ -43,7 +45,10 @@ def main():
             encodedMessage = coder()
             print("Encoded message: %s" % encodedMessage)
         elif inputMenu == 2:
-            deCoder()
+            decodedMessage = deCoder()
+            print("---------------------------------------------------\n"
+                  "%s\n" #decoded message with the swamp index
+                  "---------------------------------------------------" % decodedMessage)
         else:
             print("ERROR!!!! Please enter a valid value.")
             print("---------------------------------------------------")
