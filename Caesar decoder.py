@@ -36,6 +36,7 @@ def main():
                       "0. Exit.\n"
                       "Your option: "))
     print("---------------------------------------------------")
+
     #While cycle: processes the value given in "inputMenu" and sends it to the according function
     while(inputMenu != 0):
         if inputMenu == 1:
