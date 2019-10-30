@@ -42,10 +42,6 @@ def getAnswer(results):
                 return result
 
 
-decode_BruteForce('kcivlw bwkiji mt bzq gw makckpjii kzqzkzq')
-
-'''
 if __name__ == '__main__':
     decodedText = decoder()
     print(decodedText)
-'''
