@@ -20,6 +20,6 @@ def bruteForce():
     for i in range(1, 27):
         output = encoder.encode(textInput, i)
         if(output == textInput):
-            print("ATTEMPT %i: %s (INITIAL VALUE)3" % (i, output))
+            print("ATTEMPT %i: %s (INITIAL VALUE)" % (i, output))
         else:
             print("ATTEMPT %i: %s " %(i, output))

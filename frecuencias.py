@@ -5,29 +5,23 @@ import numpy as np
 def obtenerTexto(archivo):
     entrada = open(archivo, 'r', encoding="utf8")
     lineas = entrada.readlines()
-    lineas2 = []
 
     temporalList = []
     for linea in lineas:
-        x = linea.split('\n')
-#        print(x[0])
-        p = str(unicodedata.normalize('NFKD', x[0]).encode('ascii', 'ignore'))
-        #print(p[0])
-        #print(p)
-        o = list(p)
-        o.remove(o[0])
-        o.remove(o[0])
-        temporalList = temporalList + o
+        dividedText = linea.split('\n')
+        normalizedData = str(unicodedata.normalize('NFKD', dividedText[0]).encode('ascii', 'ignore'))
+        normalizedDataList = list(normalizedData)
+        normalizedDataList.remove(normalizedDataList[0])
+        normalizedDataList.remove(normalizedDataList[0])
+        temporalList = temporalList + normalizedDataList
 
         if ' ' in temporalList:
             temporalList.remove(' ')
 
     for i in range(len(temporalList)):
-        uuu = temporalList[i]
-        uuu = str.lower(uuu)
-        #print(uuu)
-        temporalList[i] = uuu
-    #print(temporalList)
+        charToLowerCase = temporalList[i]
+        charToLowerCase = str.lower(charToLowerCase)
+        temporalList[i] = charToLowerCase
     return temporalList
 
 
@@ -48,8 +42,6 @@ def depurarLetras(texto):
                         h = k.lower()
                         if (h.isalpha()):
                             letrasDepuradas.append(h)
-
-    #print(letrasDepuradas)
     return letrasDepuradas
 
 
@@ -59,7 +51,6 @@ def frecuenciaLetras(texto):
     for letra in listaLetras:
         n = listaLetras.count(letra)
         frequence[letra]=n
-    #print(frequence)
     return frequence
 
 
@@ -79,30 +70,26 @@ def frecuencias():
 
     abecedario = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j", "k", "l", "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     textoGeneral2 = {}
-
-    tt = 0
+    totalText = 0
     for i in range(len(abecedario)):
-        #print(abecedario[i])
-        x = abecedario[i]
+        charToProcess = abecedario[i]
 
-        t1 = texto1_letras.get(x)
-        t2 = texto2_letras.get(x)
-        t3 = texto3_letras.get(x)
+        t1 = texto1_letras.get(charToProcess)
+        t2 = texto2_letras.get(charToProcess)
+        t3 = texto3_letras.get(charToProcess)
         if (t1 == None):
             t1 = 0;
         if (t2 == None):
             t2 = 0;
         if (t3 == None):
             t3 = 0;
-        tt = tt + t1 + t2 + t3
-        #print(tt)
+        totalText = totalText + t1 + t2 + t3
     for i in range (len(abecedario)):
-        #print(abecedario[i])
-        x = abecedario[i]
+        charToProcess = abecedario[i]
 
-        t1 = texto1_letras.get(x)
-        t2 = texto2_letras.get(x)
-        t3 = texto3_letras.get(x)
+        t1 = texto1_letras.get(charToProcess)
+        t2 = texto2_letras.get(charToProcess)
+        t3 = texto3_letras.get(charToProcess)
 
         if (t1 == None):
             t1 = 0;
@@ -110,16 +97,12 @@ def frecuencias():
             t2 = 0;
         if (t3 == None):
             t3 = 0;
-
-        #print(t1)
-        #print(t2)
-        #print(t3)
         textoGeneral[abecedario[i]] = t1 + t2 + t3
-        textoGeneral2[abecedario[i]] = 100 * (t1 + t2 + t3)/tt
+        textoGeneral2[abecedario[i]] = 100 * (t1 + t2 + t3)/totalText
+
     print(textoGeneral)
     print("PORCENTAJE")
     print(textoGeneral2)
-    #print(textoGeneral)
     names = list(textoGeneral2.keys())
     values = list(textoGeneral2.values())
     plt.bar(range(len(abecedario)), values, tick_label = names)
@@ -139,60 +122,45 @@ def frecuenciaTexto(textoAnalizar):
     lineas = textoAnalizar
     temporalList = []
     for linea in lineas:
-        x = linea.split('\n')
+        dividedText = linea.split('\n')
         #        print(x[0])
-        p = str(unicodedata.normalize('NFKD', x[0]).encode('ascii', 'ignore'))
-        # print(p[0])
-        # print(p)
-        o = list(p)
-        o.remove(o[0])
-        o.remove(o[0])
-        temporalList = temporalList + o
+        normalizedData = str(unicodedata.normalize('NFKD', dividedText[0]).encode('ascii', 'ignore'))
+        normalizedDataList = list(normalizedData)
+        normalizedDataList.remove(normalizedDataList[0])
+        normalizedDataList.remove(normalizedDataList[0])
+        temporalList = temporalList + normalizedDataList
 
         if ' ' in temporalList:
             temporalList.remove(' ')
 
     for i in range(len(temporalList)):
-        uuu = temporalList[i]
-        uuu = str.lower(uuu)
+        charToLowerCase = temporalList[i]
+        charToLowerCase = str.lower(charToLowerCase)
         # print(uuu)
-        temporalList[i] = uuu
-    #print(temporalList)
+        temporalList[i] = charToLowerCase
 
     oooDepurada = depurarLetras(temporalList)
-    #print(oooDepurada)
-    #print(type(oooDepurada))
-    tt = 0
+    totalText = 0
     texto1 = frecuenciaLetras(oooDepurada)
 
     for i in range(len(abecedario)):
-        # print(abecedario[i])
-        ooo = abecedario[i]
-        t1 = texto1.get(ooo)
+        charToProcess = abecedario[i]
+        t1 = texto1.get(charToProcess)
 
         if (t1 == None):
             t1 = 0
-        tt = tt + t1
-        # print(tt)
+        totalText = totalText + t1
     for i in range(len(abecedario)):
-        # print(abecedario[i])
-        ooo = abecedario[i]
+        charToProcess = abecedario[i]
 
-        t1 = texto1.get(ooo)
+        t1 = texto1.get(charToProcess)
         if (t1 == None):
             t1 = 0
 
 
-        #print(t1)
-        #print(tt)
-        # print(t2)
-        # print(t3)
         textoGeneral[abecedario[i]] = t1
-        textoGeneral2[abecedario[i]] = 100 * (t1) / tt
-    #print(textoGeneral)
-   # print("PORCENTAJE")
-   # print(textoGeneral2)
-    # print(textoGeneral)
+        textoGeneral2[abecedario[i]] = 100 * (t1) / totalText
+
 
     ######GRAFICAR
     names = list(textoGeneral2.keys())
