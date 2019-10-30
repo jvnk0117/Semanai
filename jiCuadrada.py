@@ -25,13 +25,17 @@ def bruteForce():
             print("ATTEMPT %i: %s " %(i, output))
 
 def computeJiSquared(encodedText, sampleText):
+    sampleTextDictionary = frecuencias.frecuenciaLetras(sampleText)
     for i in range(1, 26+1):    #For cycle from the first letter to last
-        encodedTextDictionary = frecuencias.frecuenciaLetras(encodedText)
-        sampleTextDictionary = frecuencias.frecuenciaLetras(sampleText)
+        encodedTextSwap = encoder.encode(encodedText, i)
+        encodedTextDictionary = frecuencias.frecuenciaLetras(encodedTextSwap)
+
         for n in range(len(ABECEDARIO)):
             charToProcess = ABECEDARIO[n]
             charEncodedText = encodedTextDictionary.get(charToProcess)
             charSampleText = sampleTextDictionary.get(charToProcess)
-            ji = ((charEncodedText - charSampleText)^2)/charSampleText
-            dicJI[n] = ji
-    identificarIndice.identificarIndice()
+            ji = ji + ((charEncodedText - charSampleText)^2)/charSampleText
+            dicJI[i] = ji
+    minIndice = identificarIndice.identificarIndice()
+    swap = ABECEDARIO[minIndice]
+    return swap
