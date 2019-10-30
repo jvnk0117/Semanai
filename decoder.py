@@ -18,6 +18,7 @@ def decoder(toDecode,sampleText):
     return (decoded)
 
 
+
 if __name__ == '__main__':
     textToDecode = open("Text2.txt", 'r', encoding="utf8")
     textSample = open("Text2.txt", 'r', encoding="utf8")
