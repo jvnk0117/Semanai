@@ -1,7 +1,6 @@
-
 def encode(archivo, s):
     #leer un archivo como string
-    text = archivo.read().replace('\n', '')
+    text = archivo.read().replace('\n','')
 
     #Inicializa el valor string
     crypt = ""
@@ -20,24 +19,8 @@ def encode(archivo, s):
                 char) + s - 97) % 26 + 97)
 
     #Transforma en minuscula
+
     return crypt.lower()
 
 
-
-
-def main():
-
-    with open('Text2.txt', 'r', encoding="utf-8") as file: #Ayuda a leer un file como si fuese un string
-        data = file.read().replace('\n', '')
-
-    print("Original: \n" +data)
-    print("///////////////////////////////////////////////////////////////////////////////////////")
-
-    print("Decoded: \n" + encode(data,2))
-    print("===========================================================================================")
-    print(ord('A'))
-
-if __name__ == '__main__':
-
-    main()
 
