@@ -1,29 +1,27 @@
 import identificarIndice
-import encoder as e
+import encoder
 
 
 
-def decoder(toDecode,sampleText):
+def decoder():
+    toDecode = open("textoEncriptado.txt", 'r', encoding="utf8")
+    sampleText = open("Text2.txt", 'r', encoding="utf8")
+    toDecodeString = toDecode.read()
+
     # sacar indices mas altos.
-    indexToDecod = identificarIndice.identificarIndice(toDecode)
-    indexIdiom = identificarIndice.identificarIndice(sampleText)
+    indexToDecod = identificarIndice.identificarIndice(toDecodeString)
+    indexIdiom = identificarIndice.identificarIndice(sampleText.read())
 
-    deltaIndex = indexIdiom - indexToDecod
+    deltaIndex = indexToDecod - indexIdiom
     print(deltaIndex)
-    decoded = e.encode(toDecode,-deltaIndex)
 
-    sampleText.close()
+    decoded = encoder.encode(toDecodeString,-deltaIndex)
     toDecode.close()
-
+    sampleText.close()
     return (decoded)
 
 
 
 if __name__ == '__main__':
-    textToDecode = open("Text2.txt", 'r', encoding="utf8")
-    textSample = open("Text2.txt", 'r', encoding="utf8")
-
-    decodedText = decoder(textToDecode,textSample)
+    decodedText = decoder()
     print(decodedText)
-    textSample.close()
-    textToDecode.close()

@@ -15,3 +15,8 @@ def identificarIndice(toDecode):
     indice = ord(letraToDecode[0])
 
     return indice
+
+def identificarMenor(dicJI):
+    menorJi = MAX
+
+
