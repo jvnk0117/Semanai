@@ -6,7 +6,7 @@ def encode(text, s):
         char = text[i]
 
         if (char.isupper()):
-            #ord() regresa el valor unicode, el esl contrario al metodo char
+            #ord() regresa el valor unicode, el contrario al metodo char
             crypt += chr((ord(char) + s - 65) % 26 + 65)
         elif(char == " "):
 
@@ -24,13 +24,15 @@ def encode(text, s):
 
 def main():
 
-    with open('Text1.txt', 'r', encoding="utf-8") as file: #Ayuda a leer un file como si fuese un string
+    with open('Text2.txt', 'r', encoding="utf-8") as file: #Ayuda a leer un file como si fuese un string
         data = file.read().replace('\n', '')
 
     print("Original: \n" +data)
-    print("///////////////////////////////////////////////////////////////")
+    print("///////////////////////////////////////////////////////////////////////////////////////")
 
-    print("Decoded: \n" + encode(data,3))
+    print("Decoded: \n" + encode(data,2))
+    print("===========================================================================================")
+    print(ord('A'))
 
 if __name__ == '__main__':
 
