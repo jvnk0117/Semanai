@@ -16,7 +16,5 @@ def identificarIndice(toDecode):
 
     return indice
 
-def identificarMenor(dicJI):
-    menorJi = MAX
-
-
+def identifyMin(dictionary):
+    return min(dictionary, dictionary.get)

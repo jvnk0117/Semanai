@@ -6,6 +6,10 @@
 
 import encoder
 import frecuencias
+import identificarIndice
+
+ABECEDARIO = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
+              "v", "w", "x", "y", "z"]
 
 dicJI = {}
 
@@ -19,3 +23,15 @@ def bruteForce():
             print("ATTEMPT %i: %s (INITIAL VALUE)" % (i, output))
         else:
             print("ATTEMPT %i: %s " %(i, output))
+
+def computeJiSquared(encodedText, sampleText):
+    for i in range(1, 26+1):    #For cycle from the first letter to last
+        encodedTextDictionary = frecuencias.frecuenciaLetras(encodedText)
+        sampleTextDictionary = frecuencias.frecuenciaLetras(sampleText)
+        for n in range(len(ABECEDARIO)):
+            charToProcess = ABECEDARIO[n]
+            charEncodedText = encodedTextDictionary.get(charToProcess)
+            charSampleText = sampleTextDictionary.get(charToProcess)
+            ji = ((charEncodedText - charSampleText)^2)/charSampleText
+            dicJI[n] = ji
+    identificarIndice.identificarIndice()
