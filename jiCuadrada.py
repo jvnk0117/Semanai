@@ -16,11 +16,16 @@ dicJI = {}
 def computeJiSquared( ):
     ji = 0
     encodedText = open("textoEncriptado.txt", 'r', encoding="utf8")
-    sampleText = open("Text2.txt", 'r', encoding="utf8")
-
-    sampleTextDictionary = frecuencias.frecuenciaTexto(sampleText.read())
-    for i in range(1, 26+1):    #For cycle from the first letter to last
-        encodedTextSwap = encoder.encode(encodedText.read(), i)
+    sampleTextDictionary = frecuencias.frecuencias()
+    print("DICTIONARY: ")
+    print(sampleTextDictionary)
+    aEncode = (encodedText.read())
+    for i in range(1, 24):    #For cycle from the first letter to last
+        print("encoder")
+        print(i)
+        encodedTextSwap = encoder.encode(aEncode, i)
+        print(encodedTextSwap)
+        #print( frecuencias.frecuenciaTexto(encodedTextSwap))
         encodedTextDictionary = frecuencias.frecuenciaTexto(encodedTextSwap)
 
         for n in range(len(ABECEDARIO)):
@@ -29,9 +34,6 @@ def computeJiSquared( ):
             charSampleText = sampleTextDictionary.get(charToProcess)
             if charSampleText == 0:
                 charSampleText = 0.00000000001
-            print(charEncodedText)
-            print(charSampleText)
-            print(ji)
             ji = ji + ((charEncodedText - charSampleText)*(charEncodedText - charSampleText))/charSampleText
             dicJI[i] = ji
     minIndice = identificarIndice.identificarIndice(dicJI)

@@ -101,9 +101,9 @@ def frecuencias():
         textoGeneral[abecedario[i]] = t1 + t2 + t3
         textoGeneral2[abecedario[i]] = 100 * (t1 + t2 + t3)/totalText
 
-    print(textoGeneral)
-    print("PORCENTAJE")
-    print(textoGeneral2)
+    #print(textoGeneral)
+    #print("PORCENTAJE")
+    #print(textoGeneral2)
     names = list(textoGeneral2.keys())
     values = list(textoGeneral2.values())
     plt.bar(range(len(abecedario)), values, tick_label = names)
@@ -114,8 +114,9 @@ def frecuencias():
 
 #FRECUANCIA STRING, GRAFICA
 def frecuenciaTexto(textoAnalizar):
-   # print("TEXTO A ANALIZAR")
-   # print(textoAnalizar)
+    #print("TEXTO A ANALIZAR")
+
+    #print(textoAnalizar)
 
     textoGeneral = {}
 
@@ -153,6 +154,7 @@ def frecuenciaTexto(textoAnalizar):
         if (t1 == None):
             t1 = 0
         totalText = totalText + t1
+        #print(totalText)
     for i in range(len(abecedario)):
         charToProcess = abecedario[i]
 
