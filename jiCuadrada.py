@@ -13,17 +13,6 @@ ABECEDARIO = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 
 dicJI = {}
 
-def bruteForce():
-    textInput = input("Enter the coded message\n"
-                      "WARNING! This may take a while to finish\n"
-                      "Message: ")
-    for i in range(1, 27):
-        output = encoder.encode(textInput, i)
-        if(output == textInput):
-            print("ATTEMPT %i: %s (INITIAL VALUE)" % (i, output))
-        else:
-            print("ATTEMPT %i: %s " %(i, output))
-
 def computeJiSquared(encodedText, sampleText):
     sampleTextDictionary = frecuencias.frecuenciaLetras(sampleText)
     for i in range(1, 26+1):    #For cycle from the first letter to last
