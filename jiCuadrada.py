@@ -6,6 +6,7 @@
 
 import encoder
 import frecuencias
+import identificarIndice
 
 ABECEDARIO = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
               "v", "w", "x", "y", "z"]
@@ -33,3 +34,4 @@ def computeJiSquared(encodedText, sampleText):
             charSampleText = sampleTextDictionary.get(charToProcess)
             ji = ((charEncodedText - charSampleText)^2)/charSampleText
             dicJI[n] = ji
+    identificarIndice.identificarIndice()

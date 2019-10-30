@@ -15,3 +15,6 @@ def identificarIndice(toDecode):
     indice = ord(letraToDecode[0])
 
     return indice
+
+def identifyMin(dictionary):
+    return min(dictionary, dictionary.get)
