@@ -2,6 +2,7 @@ import unicodedata
 import matplotlib.pyplot as plt
 import numpy as np
 
+#comentario
 def obtenerTexto(archivo):
     entrada = open(archivo, 'r', encoding="utf8")
     lineas = entrada.readlines()
