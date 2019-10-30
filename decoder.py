@@ -1,12 +1,9 @@
 import identificarIndice
 import encoder as e
 
-sampleText = open("Text2.txt", "r", encoding="utf8")  # abrir txt de idioma.
 
 
-def decoder():
-    sampleText = open("Text2.txt","r", encoding="utf8") #abrir txt de idioma.
-    toDecode = open("Text1.txt","r", encoding="utf8") #abrir txt de idioma.
+def decoder(toDecode,sampleText):
     # sacar indices mas altos.
     indexToDecod = identificarIndice.identificarIndice(toDecode)
     indexIdiom = identificarIndice.identificarIndice(sampleText)
@@ -20,16 +17,12 @@ def decoder():
 
     return (decoded)
 
-print(sampleText)
-#print(e.encode(sampleText,4))
 
-#if __name__ == '__main__':
-    #textToDecode = open("Text2.txt", 'r', encoding="utf8")
-    #textSample = open("Text2.txt", 'r', encoding="utf8")
-   #text = open("Text1.txt", "r", encoding="utf8")  # abrir txt de idioma.
+if __name__ == '__main__':
+    textToDecode = open("Text2.txt", 'r', encoding="utf8")
+    textSample = open("Text2.txt", 'r', encoding="utf8")
 
-   # e.encode(text,4)
-    #decodedText = decoder()
-    #print(decodedText)
-    #textSample.close()
-    #textToDecode.close()
+    decodedText = decoder(textToDecode,textSample)
+    print(decodedText)
+    textSample.close()
+    textToDecode.close()
