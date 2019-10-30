@@ -2,6 +2,8 @@ import unicodedata
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+###########LEE ARCHIVOS, NORMALIZA TEXTO PARA IGUALAR ACENTOS A SU VERSION SIN ACENTO...
 def obtenerTexto(archivo):
     entrada = open(archivo, 'r', encoding="utf8")
     lineas = entrada.readlines()
@@ -30,7 +32,7 @@ def obtenerTexto(archivo):
     #print(temporalList)
     return temporalList
 
-
+#########################ELIMINA ELEMENTOS QUE NO SEAN LETRAS DEL ABECEDARIO
 def depurarLetras(texto):
     letrasDepuradas = []
     for frase in texto:
@@ -52,7 +54,7 @@ def depurarLetras(texto):
     #print(letrasDepuradas)
     return letrasDepuradas
 
-
+######CUENTA CUANTAS VECES APARECE CADA CARACTER EN TEXTO
 def frecuenciaLetras(texto):
     frequence = {}
     listaLetras = depurarLetras(texto)
@@ -66,7 +68,7 @@ def frecuenciaLetras(texto):
 
 
 
-
+#########CALCULA LA FRECUENCIA DE EL LENGUAJE ESPANOL, EN BASE A Text1, Text2 y Text3
 def frecuencias():
     textoGeneral = {}
     
@@ -127,6 +129,8 @@ def frecuencias():
     plt.show()
     return textoGeneral2
 
+
+#########CALCULA LA FRECUENCIA DE EL TEXTO, EN LENGUAJE ESPANOL
 def frecuenciaTexto(textoAnalizar):
    # print("TEXTO A ANALIZAR")
    # print(textoAnalizar)
@@ -176,7 +180,7 @@ def frecuenciaTexto(textoAnalizar):
         # print(tt)
     for i in range(len(abecedario)):
         # print(abecedario[i])
-        ooo = abecedario[i]
+        s = abecedario[i]
 
         t1 = texto1.get(ooo)
         if (t1 == None):
