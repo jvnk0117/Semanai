@@ -15,8 +15,8 @@ def coder():
     return output
 
 #Calls the decoding function on te "decoder.py file
-def deCoder(message):
-    decoder.decoder(message)
+def deCoder():
+    decoder.decoder()
 
 
 def main():
@@ -26,7 +26,7 @@ def main():
     inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
                       "Please enter the desired interaction on the menu:\n"
                       "1. Encoder.\n"
-                      "2. Decoder.\n"
+                      "2. Decoder (Desde el archivo 'toDecode.txt').\n"
                       "-1. Exit.\n"
                       "Your option: "))
     print("---------------------------------------------------")
@@ -34,8 +34,7 @@ def main():
         if inputMenu == 1:
             print(coder())
         elif inputMenu == 2:
-            mensaje = input("Message to decode: ")
-            deCoder(mensaje)
+            deCoder()
         else:
             print("ERROR!!!! Please enter a valid value.")
             print("---------------------------------------------------")
