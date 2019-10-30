@@ -35,6 +35,7 @@ def main():
                       "Please enter the desired interaction on the menu:\n"
                       "1. Encoder.\n"
                       "2. Decoder (Desde el archivo 'toDecode.txt').\n"
+                      "3. Brute Force Decoder.\n"
                       "0. Exit.\n"
                       "Your option: "))
     print("---------------------------------------------------")
@@ -49,6 +50,9 @@ def main():
             print("---------------------------------------------------\n"
                   "%s\n" #decoded message with the swamp index
                   "---------------------------------------------------" % decodedMessage)
+        elif inputMenu == 3:
+            textInput = input("Enter the coded text: ")
+            decoder.decode_BruteForce(textInput)
         else:
             print("ERROR!!!! Please enter a valid value.")
             print("---------------------------------------------------")
@@ -56,6 +60,7 @@ def main():
                           "Please enter the desired interaction on the menu:\n"
                           "1. Encoder.\n"
                           "2. Decoder.\n"
+                          "3. Brute Force Decoder.\n"
                           "0. Exit.\n"
                           "Your option: "))
         print("---------------------------------------------------")

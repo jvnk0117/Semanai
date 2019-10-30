@@ -1,4 +1,5 @@
 import identificarIndice
+import frecuencias
 import encoder
 
 
@@ -20,7 +21,10 @@ def decoder(text):
     sampleText.close()
     return ("Message Received: %s\nSwap Key: %i\nDecoded Message: %s" %(toDecode, deltaIndex, decoded))
 
-
+def decode_BruteForce(text):
+    for i in range(1, 28):    #For cycle from the first letter to last
+        decoded = encoder.encode(text, -i)
+        print('Attempt', i, 'Message: ', decoded)
 
 
 if __name__ == '__main__':
