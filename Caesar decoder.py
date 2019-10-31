@@ -4,6 +4,7 @@ import getpass
 #Import the python files needed for each function in the menu
 import encoder
 import decoder
+import jiCuadrada
 import frecuencias
 
 USER = getpass.getuser()
@@ -35,8 +36,9 @@ def main():
     inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
                       "Please enter the desired interaction on the menu:\n"
                       "1. Encoder.\n"
-                      "2. Decoder (Desde el archivo 'toDecode.txt').\n"
+                      "2. Decoder.\n"
                       "3. Brute Force Decoder.\n"
+                      "4.jiSquared Decoder (from textoEncriptado.txt)\n"
                       "0. Exit.\n"
                       "Your option: "))
     print("---------------------------------------------------")
@@ -54,6 +56,9 @@ def main():
         elif inputMenu == 3:
             textInput = input("Enter the coded text: ")
             decoder.decode_BruteForce(textInput)
+        elif inputMenu == 4:
+            jiCuadrada.main()
+
         else:
             print("ERROR!!!! Please enter a valid value.")
             print("---------------------------------------------------")
@@ -62,12 +67,13 @@ def main():
                           "1. Encoder.\n"
                           "2. Decoder.\n"
                           "3. Brute Force Decoder.\n"
+                          "4. jiSquared Decoder (from textoEncriptado.txt)\n"
                           "0. Exit.\n"
                           "Your option: "))
         print("---------------------------------------------------")
 
 
-    print("see you soon", USER)
+    print("See you soon.........", USER)
     print("Exiting the program...")
     print("---------------------------------------------------")
 
