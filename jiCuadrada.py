@@ -3,7 +3,7 @@
 #calcular la ji cuadrada:
 #Se calcula la menor ji cuadrada y esa es la frecuencia del mensaje correcto.
 #Desencriptar el mensaje con esa frecuencia.
-
+import createTables
 import encoder
 import frecuencias
 import identificarIndice
@@ -42,6 +42,7 @@ def computeJiSquared():
             dicJI[i] = ji
     #print(dicJI)
     swap = min(dicJI, key=dicJI.get)
+    print(createTables.createJiTable(dicJI))
     encodedText.close()
     return swap
 
@@ -57,4 +58,12 @@ def main():
     writeOutput(result)
     encodedText.close()
 
-main()
+
+if __name__ == '__main__':
+    decodedText = computeJiSquared()
+    print(decodedText)
+    print("Swap: ")
+    swap = 26 - decodedText
+    print(swap)
+    encodedText = open("textoEncriptado.txt", 'r', encoding="utf8")
+    print("texto decodificado: " + encoder.encode(encodedText.read(),-swap))
