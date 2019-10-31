@@ -17,7 +17,8 @@ def identificarIndice(toDecode):
     return indice
 
 def getMin(dictionary):
-    return min(dictionary, dictionary.get)
+   return min(dictionary)
+
 
 def getMax(dictionary):
-    return max(dictionary, dictionary.get)
+    return max(dictionary)

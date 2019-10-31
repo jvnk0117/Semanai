@@ -168,11 +168,11 @@ def frecuenciaTexto(textoAnalizar):
 
 
     ######GRAFICAR
-    names = list(textoGeneral2.keys())
-    values = list(textoGeneral2.values())
-    plt.bar(range(len(abecedario)), values, tick_label=names)
-    plt.show()
-    plt.show()
+   # names = list(textoGeneral2.keys())
+   # values = list(textoGeneral2.values())
+   # plt.bar(range(len(abecedario)), values, tick_label=names)
+   # plt.show()
+   # plt.show()
     #######GRAFICAR
 
 
