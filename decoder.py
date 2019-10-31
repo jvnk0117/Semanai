@@ -5,7 +5,7 @@ import encoder
 
 def decoder(text):
     #toDecode = open("textoEncriptado.txt", 'r', encoding="utf8")
-    sampleText = open("Text2.txt", 'r', encoding="utf8")
+    sampleText = open("SampleTexts/Text2.txt", 'r', encoding="utf8")
     #toDecodeString = toDecode.read()
     toDecode = text
 

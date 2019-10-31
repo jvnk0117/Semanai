@@ -62,9 +62,9 @@ def frecuenciaLetras(texto):
 def frecuencias():
     textoGeneral = {}
     
-    texto1 = obtenerTexto('Text1.txt')
-    texto2 = obtenerTexto('Text2.txt')
-    texto3 = obtenerTexto('Text3.txt')
+    texto1 = obtenerTexto('SampleTexts/Text1.txt')
+    texto2 = obtenerTexto('SampleTexts/Text2.txt')
+    texto3 = obtenerTexto('SampleTexts/Text3.txt')
     texto1_letras = frecuenciaLetras(texto1)
     texto2_letras = frecuenciaLetras(texto2)
     texto3_letras = frecuenciaLetras(texto3)

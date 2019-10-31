@@ -9,7 +9,7 @@ import frecuencias
 USER = getpass.getuser()
 #Calls the coding function on the "encoder.py" file
 def coder():
-    encryptedMessage = input("Enter the encoded message: ")
+    encryptedMessage = input("Enter the message: ")
     switchIndex = int(input("Enter the switch index: "))
     output = encoder.encode(encryptedMessage, switchIndex)
     return output
@@ -34,7 +34,7 @@ def main():
     inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
                       "Please enter the desired interaction on the menu:\n"
                       "1. Encoder.\n"
-                      "2. Decoder (Desde el archivo 'toDecode.txt').\n"
+                      "2. Decoder.\n"
                       "0. Exit.\n"
                       "Your option: "))
     print("---------------------------------------------------")
