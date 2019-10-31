@@ -21,7 +21,7 @@ def writeOutput(text):
     out.close()
 
 
-def computeJiSquared( ):
+def computeJiSquared():
 
     encodedText = open("textoEncriptado.txt", 'r', encoding="utf8")
     sampleTextDictionary = frecuencias.frecuencias()
@@ -42,6 +42,7 @@ def computeJiSquared( ):
             dicJI[i] = ji
     #print(dicJI)
     swap = min(dicJI, key=dicJI.get)
+    encodedText.close()
     return swap
 
 
@@ -54,4 +55,6 @@ def main():
     encodedText = open("textoEncriptado.txt", 'r', encoding="utf8")
     result = encoder.encode(encodedText.read(),-swap)
     writeOutput(result)
+    encodedText.close()
 
+main()

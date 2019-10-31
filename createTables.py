@@ -1,6 +1,7 @@
 #encoding: UTF-8
 import terminaltables
 import frecuencias
+import jiCuadrada
 
 
 def createSampleTable():
@@ -26,3 +27,6 @@ def createCustomTable(text):
     table = terminaltables.AsciiTable(data)
     table.title = "Tabla de frecuencias"
     return table.table
+
+def createJiSquaredTable():
+    print(jiCuadrada.dicJI)

@@ -23,6 +23,7 @@ def deCoder():
     textInput = input("Enter the coded text: ")
     output = decoder.decoder(textInput)
     customTable = createTables.createCustomTable(textInput)
+    print(createTables.createJiSquaredTable())
     print(customTable)
     return output
 
