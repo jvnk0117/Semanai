@@ -8,10 +8,18 @@ import encoder
 import frecuencias
 import identificarIndice
 
-ABECEDARIO = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
+ABECEDARIO = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+              "u",
               "v", "w", "x", "y", "z"]
 
 dicJI = {}
+
+
+def writeOutput(text):
+    out = open("decodedText.txt", 'w', encoding='utf8')
+    out.write(text)
+    out.close()
+
 
 def computeJiSquared( ):
 
@@ -32,14 +40,18 @@ def computeJiSquared( ):
                 charSampleText = 0.00000000001
             ji = ji + ((charEncodedText - charSampleText)*(charEncodedText - charSampleText))/charSampleText
             dicJI[i] = ji
-    print(dicJI)
+    #print(dicJI)
     swap = min(dicJI, key=dicJI.get)
     return swap
-if __name__ == '__main__':
+
+
+def main():
     decodedText = computeJiSquared()
     print("Swap: ")
     swap = 26 - decodedText
     print(swap)
     print("texto decodificado: ")
     encodedText = open("textoEncriptado.txt", 'r', encoding="utf8")
-    print(encoder.encode(encodedText.read(),-swap))
+    result = encoder.encode(encodedText.read(),-swap)
+    writeOutput(result)
+

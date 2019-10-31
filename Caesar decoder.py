@@ -9,7 +9,7 @@ import frecuencias
 USER = getpass.getuser()
 #Calls the coding function on the "encoder.py" file
 def coder():
-    encryptedMessage = input("Enter the message: ")
+    encryptedMessage = input("Enter the encoded message: ")
     switchIndex = int(input("Enter the switch index: "))
     output = encoder.encode(encryptedMessage, switchIndex)
     return output
@@ -27,6 +27,7 @@ def main():
     print("██║     ███████║█████╗  ███████╗███████║██████╔╝    █████╗  ██╔██╗ ██║██║     ██║   ██║██║  ██║█████╗  ██████╔╝")
     print("██║     ██╔══██║██╔══╝  ╚════██║██╔══██║██╔══██╗    ██╔══╝  ██║╚██╗██║██║     ██║   ██║██║  ██║██╔══╝  ██╔══██╗")
     print("╚██████╗██║  ██║███████╗███████║██║  ██║██║  ██║    ███████╗██║ ╚████║╚██████╗╚██████╔╝██████╔╝███████╗██║  ██    v1.0.0" )
+    print("By: Man-Go, Zexceed7, tndr7, RicoVevo & R4$PUT1N")
     print("---------------------------------------------------")
     print("Welcome %s" %USER)
     print("---------------------------------------------------")
@@ -34,7 +35,8 @@ def main():
     inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
                       "Please enter the desired interaction on the menu:\n"
                       "1. Encoder.\n"
-                      "2. Decoder.\n"
+                      "2. Decoder (Desde el archivo 'toDecode.txt').\n"
+                      "3. Brute Force Decoder.\n"
                       "0. Exit.\n"
                       "Your option: "))
     print("---------------------------------------------------")
@@ -49,6 +51,9 @@ def main():
             print("---------------------------------------------------\n"
                   "%s\n" #decoded message with the swamp index
                   "---------------------------------------------------" % decodedMessage)
+        elif inputMenu == 3:
+            textInput = input("Enter the coded text: ")
+            decoder.decode_BruteForce(textInput)
         else:
             print("ERROR!!!! Please enter a valid value.")
             print("---------------------------------------------------")
@@ -56,6 +61,7 @@ def main():
                           "Please enter the desired interaction on the menu:\n"
                           "1. Encoder.\n"
                           "2. Decoder.\n"
+                          "3. Brute Force Decoder.\n"
                           "0. Exit.\n"
                           "Your option: "))
         print("---------------------------------------------------")
