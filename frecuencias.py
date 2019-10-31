@@ -2,6 +2,8 @@ import unicodedata
 import matplotlib.pyplot as plt
 import numpy as np
 
+names = {}
+values = {}
 #comentario
 
 #LEE TEXTO
@@ -106,9 +108,11 @@ def frecuencias():
     #print(textoGeneral2)
     names = list(textoGeneral2.keys())
     values = list(textoGeneral2.values())
+    """
     plt.bar(range(len(abecedario)), values, tick_label = names)
     plt.show()
     plt.show()
+    """
     return textoGeneral2
 
 
