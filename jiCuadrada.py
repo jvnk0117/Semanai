@@ -35,5 +35,5 @@ def computeJiSquared(aEncode):
             dicJI[i] = ji   # se agrega a diccionario de ji cuadrada donde i es el swap.
     swap = 26 - min(dicJI, key=dicJI.get)   # Se busca el menor ji cuadrado y se resta el total de iter para sacar la diferencia.
     print(createTables.createJiTable(dicJI)) # tablas
-    print('\n\nThe right one should be: ', encoder.encode(aEncode,-swap), '\n\n')
+    print('\n\nThe right one should be: ', encoder.encode(aEncode,-swap), '\n swap: ', swap, '\n\n')
     return swap
