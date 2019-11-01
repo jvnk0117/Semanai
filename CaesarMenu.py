@@ -40,7 +40,7 @@ if __name__ == '__main__':
     inputMenu = int(input("Welcome to the Caesar code encoder/decoder.\n"
                       "Please enter the desired interaction on the menu:\n"
                       "1. Encoder.\n"
-                      "2. Decoder (Desde el archivo 'toDecode.txt').\n"
+                      "2. Decoder.\n"
                       "3. Brute Force Decoder.\n"
                       "4. Ji Cuadrada. \n"
                       "0. Exit.\n"
