@@ -39,7 +39,6 @@ def computeJiSquared(aEncode):
     #print(dicJI)
     swap = min(dicJI, key=dicJI.get)
     print(createTables.createJiTable(dicJI))
-    encodedText.close()
     return swap
 
 
