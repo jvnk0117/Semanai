@@ -1,5 +1,4 @@
 #encoding: UTF-8
-#comment just made to push the piece of shit file
 import getpass
 #Import the python files needed for each function in the menu
 import createTables
@@ -59,7 +58,7 @@ if __name__ == '__main__':
             sampleTable = createTables.createSampleTable()
             print(sampleTable)
             print("---------------------------------------------------\n"
-                  "%s\n" #decoded message with the swamp index
+                  "%s\n" #decoded message with the swap index
                   "---------------------------------------------------" % decodedMessage)
         elif inputMenu == 3:
             textInput = input("Enter the coded text: ")
