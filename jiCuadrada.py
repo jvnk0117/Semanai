@@ -7,7 +7,7 @@ import createTables
 import encoder
 import frecuencias
 import identificarIndice
-
+# lista para detectar
 ABECEDARIO = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
               "u",
               "v", "w", "x", "y", "z"]
@@ -37,8 +37,9 @@ def computeJiSquared(aEncode):
             ji = ji + ((charEncodedText - charSampleText)*(charEncodedText - charSampleText))/charSampleText
             dicJI[i] = ji
     #print(dicJI)
-    swap = min(dicJI, key=dicJI.get)
+    swap = 26 - min(dicJI, key=dicJI.get)
     print(createTables.createJiTable(dicJI))
+    print('\n\nThe right one should be: ', encoder.encode(aEncode,-swap), '\n\n')
     return swap
 
 

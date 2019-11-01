@@ -44,6 +44,7 @@ def main():
                       "1. Encoder.\n"
                       "2. Decoder (Desde el archivo 'toDecode.txt').\n"
                       "3. Brute Force Decoder.\n"
+                      "4. Ji Cuadrada. \n"
                       "0. Exit.\n"
                       "Your option: "))
     print("---------------------------------------------------")
@@ -64,6 +65,9 @@ def main():
         elif inputMenu == 3:
             textInput = input("Enter the coded text: ")
             decoder.decode_BruteForce(textInput)
+        elif inputMenu == 4:
+            textInput = input("Enter the coded text: ")
+            jiCuadrada.computeJiSquared(textInput)
         else:
             print("ERROR!!!! Please enter a valid value.")
             print("---------------------------------------------------")
@@ -72,6 +76,7 @@ def main():
                           "1. Encoder.\n"
                           "2. Decoder.\n"
                           "3. Brute Force Decoder.\n"
+                          "4. Ji Cuadrada. \n"
                           "0. Exit.\n"
                           "Your option: "))
         print("---------------------------------------------------")
