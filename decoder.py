@@ -32,14 +32,19 @@ def decode_BruteForce(text):
     print('\n\nThe right one should be: ', answer)
 
 
-def getAnswer(results):
-    articulos = ['el', 'la', 'los', 'las', 'este', 'esta', 'estos', 'un',
-                 'una', 'unos', 'lo']
+def getAnswer(results): #Busca que en la frase exista un articulo o un nexo para saber que es la correcta
+    keys = ['el', 'la', 'los', 'las', 'este', 'esta', 'estos', 'un',
+                 'una', 'unos', 'lo', 'aquel','aquella', 'aquello','a', 'ante', 'bajo', 'contra', 'de', 'desde', 'en', 'entre', 'hacia', 'para',
+            'por', 'segun', 'si', 'sobre', 'tras', 'hola', 'yo', 'tu', 'el', 'ella', 'y', 'que', 'como', 'donde', 'cuando',
+            'hombre', 'mujer', 'adios', 'ser', 'tal', 'ello']
+
     for result in results:
         x = result.split(' ')
         for palabra in x:
-            if palabra in articulos:
+            if palabra in keys:
                 return result
+
+
 
 
 if __name__ == '__main__':
