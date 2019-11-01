@@ -59,4 +59,4 @@ if __name__ == '__main__':
     print("Swap: ")
     swap = 26 - decodedText
     print(swap)
-    print(encoder.encode("texto decodificado: " + "qyppiv wi pe gsqi",-swap))
+    print(encoder.encode("qyppiv wi pe gsqi",-swap))
