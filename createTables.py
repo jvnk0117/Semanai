@@ -29,7 +29,7 @@ def createCustomTable(text):
     for n in range(len(dictTable)):
         inputNumber = str(n+1) + ".- "
         data.append([(inputNumber + str(dictTableKeys[n])), str(dictTableValues[n])])
-    table = terminaltables.AsciiTable(data)
+    table = terminaltables.DoubleTable(data)
     table.inner_row_border = True
     table.inner_column_border = False
     table.title = "Tabla de frecuencias"
