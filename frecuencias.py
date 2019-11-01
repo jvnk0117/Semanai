@@ -11,6 +11,8 @@ def obtenerTexto(archivo):
     entrada = open(archivo, 'r', encoding="utf8")
     lineas = entrada.readlines()
 
+
+###limpia archivo, normaliza mayusculas y acentos
     temporalList = []
     for linea in lineas:
         dividedText = linea.split('\n')
@@ -22,7 +24,7 @@ def obtenerTexto(archivo):
 
         if ' ' in temporalList:
             temporalList.remove(' ')
-
+###minusculas############################################
     for i in range(len(temporalList)):
         charToLowerCase = temporalList[i]
         charToLowerCase = str.lower(charToLowerCase)
@@ -63,7 +65,7 @@ def frecuenciaLetras(texto):
 ##FRECUENCIAS DE 3 TEXTTOS DISTINTOS, GRAFICA
 def frecuencias():
     textoGeneral = {}
-    
+#################################################LECTURA DE 3 TXT
     texto1 = obtenerTexto('SampleTexts/Text1.txt')
     texto2 = obtenerTexto('SampleTexts/Text2.txt')
     texto3 = obtenerTexto('SampleTexts/Text3.txt')
@@ -71,6 +73,7 @@ def frecuencias():
     texto2_letras = frecuenciaLetras(texto2)
     texto3_letras = frecuenciaLetras(texto3)
 
+####letras aceptadas por el agoritmo
     abecedario = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j", "k", "l", "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     textoGeneral2 = {}
     totalText = 0
@@ -93,22 +96,24 @@ def frecuencias():
         t1 = texto1_letras.get(charToProcess)
         t2 = texto2_letras.get(charToProcess)
         t3 = texto3_letras.get(charToProcess)
-
+###########################################FAILSAFE, EVITA NONE EN CALCULO DE PROMEDIO
         if (t1 == None):
             t1 = 0;
         if (t2 == None):
             t2 = 0;
         if (t3 == None):
             t3 = 0;
+##############################################PROMEDIO DE USO
         textoGeneral[abecedario[i]] = t1 + t2 + t3
         textoGeneral2[abecedario[i]] = 100 * (t1 + t2 + t3)/totalText
 
     #print(textoGeneral)
     #print("PORCENTAJE")
     #print(textoGeneral2)
+    """
+
     names = list(textoGeneral2.keys())
     values = list(textoGeneral2.values())
-    """
     plt.bar(range(len(abecedario)), values, tick_label = names)
     plt.show()
     plt.show()
@@ -124,7 +129,7 @@ def frecuenciaTexto(textoAnalizar):
 
     textoGeneral = {}
 
-
+##########VALORES ACEPTADOS
     abecedario = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j", "k", "l", "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     textoGeneral2 = {}
     lineas = textoAnalizar
@@ -132,6 +137,8 @@ def frecuenciaTexto(textoAnalizar):
     for linea in lineas:
         dividedText = linea.split('\n')
         #        print(x[0])
+
+#####NORMALIZAR TEXTO ##########
         normalizedData = str(unicodedata.normalize('NFKD', dividedText[0]).encode('ascii', 'ignore'))
         normalizedDataList = list(normalizedData)
         normalizedDataList.remove(normalizedDataList[0])
@@ -140,13 +147,13 @@ def frecuenciaTexto(textoAnalizar):
 
         if ' ' in temporalList:
             temporalList.remove(' ')
-
+##############MINUSCULAS
     for i in range(len(temporalList)):
         charToLowerCase = temporalList[i]
         charToLowerCase = str.lower(charToLowerCase)
         # print(uuu)
         temporalList[i] = charToLowerCase
-
+#######DEPURA EL STRING
     oooDepurada = depurarLetras(temporalList)
     totalText = 0
     texto1 = frecuenciaLetras(oooDepurada)
@@ -154,7 +161,7 @@ def frecuenciaTexto(textoAnalizar):
     for i in range(len(abecedario)):
         charToProcess = abecedario[i]
         t1 = texto1.get(charToProcess)
-
+#######FAILSAFE, EVITA NONE
         if (t1 == None):
             t1 = 0
         totalText = totalText + t1
@@ -165,19 +172,17 @@ def frecuenciaTexto(textoAnalizar):
         t1 = texto1.get(charToProcess)
         if (t1 == None):
             t1 = 0
-
-
+####################################PROMEDIO DE USO DEL CARACTER
         textoGeneral[abecedario[i]] = t1
         textoGeneral2[abecedario[i]] = 100 * (t1) / totalText
 
-
-    ######GRAFICAR
+######GRAFICAR
    # names = list(textoGeneral2.keys())
    # values = list(textoGeneral2.values())
    # plt.bar(range(len(abecedario)), values, tick_label=names)
    # plt.show()
    # plt.show()
-    #######GRAFICAR
+#######GRAFICAR
 
 
     return textoGeneral2
