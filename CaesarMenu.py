@@ -1,10 +1,14 @@
 #encoding: UTF-8
-
+#comment just made to push the piece of shit file
 import getpass
 #Import the python files needed for each function in the menu
+import createTables
 import encoder
 import decoder
 import frecuencias
+import terminaltables
+
+import jiCuadrada
 
 USER = getpass.getuser()
 #Calls the coding function on the "encoder.py" file
@@ -18,6 +22,9 @@ def coder():
 def deCoder():
     textInput = input("Enter the coded text: ")
     output = decoder.decoder(textInput)
+    customTable = createTables.createCustomTable(textInput)
+    print(createTables.createJiSquaredTable())
+    print(customTable)
     return output
 
 
@@ -27,6 +34,7 @@ def main():
     print("██║     ███████║█████╗  ███████╗███████║██████╔╝    █████╗  ██╔██╗ ██║██║     ██║   ██║██║  ██║█████╗  ██████╔╝")
     print("██║     ██╔══██║██╔══╝  ╚════██║██╔══██║██╔══██╗    ██╔══╝  ██║╚██╗██║██║     ██║   ██║██║  ██║██╔══╝  ██╔══██╗")
     print("╚██████╗██║  ██║███████╗███████║██║  ██║██║  ██║    ███████╗██║ ╚████║╚██████╗╚██████╔╝██████╔╝███████╗██║  ██    v1.0.0" )
+    print("By: Man-Go, Zexceed7, tndr7, RicoVevo & R4$PUT1N")
     print("---------------------------------------------------")
     print("Welcome %s" %USER)
     print("---------------------------------------------------")
@@ -47,6 +55,9 @@ def main():
             print("Encoded message: %s" % encodedMessage)
         elif inputMenu == 2:
             decodedMessage = deCoder()
+            #Creates a table that shows the char average in a text
+            sampleTable = createTables.createSampleTable()
+            print(sampleTable)
             print("---------------------------------------------------\n"
                   "%s\n" #decoded message with the swamp index
                   "---------------------------------------------------" % decodedMessage)

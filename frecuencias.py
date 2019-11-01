@@ -2,6 +2,8 @@ import unicodedata
 import matplotlib.pyplot as plt
 import numpy as np
 
+names = {}
+values = {}
 #comentario
 
 #LEE TEXTO
@@ -62,9 +64,9 @@ def frecuenciaLetras(texto):
 def frecuencias():
     textoGeneral = {}
     
-    texto1 = obtenerTexto('Text1.txt')
-    texto2 = obtenerTexto('Text2.txt')
-    texto3 = obtenerTexto('Text3.txt')
+    texto1 = obtenerTexto('SampleTexts/Text1.txt')
+    texto2 = obtenerTexto('SampleTexts/Text2.txt')
+    texto3 = obtenerTexto('SampleTexts/Text3.txt')
     texto1_letras = frecuenciaLetras(texto1)
     texto2_letras = frecuenciaLetras(texto2)
     texto3_letras = frecuenciaLetras(texto3)
@@ -106,9 +108,11 @@ def frecuencias():
     #print(textoGeneral2)
     names = list(textoGeneral2.keys())
     values = list(textoGeneral2.values())
+    """
     plt.bar(range(len(abecedario)), values, tick_label = names)
     plt.show()
     plt.show()
+    """
     return textoGeneral2
 
 
