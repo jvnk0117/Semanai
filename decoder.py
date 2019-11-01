@@ -1,24 +1,19 @@
-import identificarIndice
 import frecuencias
 import encoder
 
 
 
-def decoder(text):
-    #toDecode = open("textoEncriptado.txt", 'r', encoding="utf8")
-    sampleText = open("SampleTexts/Text2.txt", 'r', encoding="utf8")
-    #toDecodeString = toDecode.read()
-    toDecode = text
-
-    # sacar indices mas altos.
-    indexToDecod = identificarIndice.identificarIndice(toDecode)
-    indexIdiom = identificarIndice.identificarIndice(sampleText.read())
-
-    deltaIndex = indexToDecod - indexIdiom
-
+def decoder(toDecode):
+    # diccionarios de frecuencias
+    dicFrecTDecode = frecuencias.frecuenciaTexto(toDecode)
+    dicSample = frecuencias.frecuencias()
+    # sacamos el maximo valor de cada diccionario ascii
+    indexToDecod = ord(max(dicFrecTDecode, key=dicFrecTDecode.get))
+    indexSample = ord(max(dicSample, key=dicSample.get))
+    # La diferencia de los dos maximos valores es el swap.
+    deltaIndex = indexToDecod - indexSample
+    #LLamamos a enocoder para mover el texto con el swap degativo.
     decoded = encoder.encode(toDecode,-deltaIndex)
-    #toDecode.close()
-    sampleText.close()
     return ("Message Received: %s\nSwap Key: %i\nDecoded Message: %s" %(toDecode, deltaIndex, decoded))
 
 def decode_BruteForce(text):
