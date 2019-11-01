@@ -55,7 +55,7 @@ if __name__ == '__main__':
         elif inputMenu == 2:
             decodedMessage = deCoder()
             #Creates a table that shows the char average in a text
-            sampleTable = createTables.createSampleTable()
+            #sampleTable = createTables.createSampleTable()
             #print(sampleTable)
             print("---------------------------------------------------\n"
                   "%s\n" #decoded message with the swap index
@@ -78,7 +78,6 @@ if __name__ == '__main__':
                           "0. Exit.\n"
                           "Your option: "))
         print("---------------------------------------------------")
-
 
     print("see you soon", USER)
     print("Exiting the program...")
